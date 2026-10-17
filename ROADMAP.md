@@ -5,7 +5,7 @@ Tick each box in the same commit that completes the step.
 
 - [x] 1. Project skeleton: `pyproject.toml`, `.gitignore`, `.env.example`, `app/` package, MIT license
 - [x] 2. FastAPI app with `/health` endpoint and a first pytest test
-- [ ] 3. Configuration via environment variables (pydantic-settings)
+- [x] 3. Configuration via environment variables (pydantic-settings)
 - [ ] 4. SQLAlchemy setup, database session dependency, and `Order` / `OrderItem` models
 - [ ] 5. Pydantic schemas for creating and reading orders
 - [ ] 6. `POST /orders` and `GET /orders/{id}` endpoints
