@@ -7,7 +7,7 @@ Tick each box in the same commit that completes the step.
 - [x] 2. FastAPI app with `/health` endpoint and a first pytest test
 - [x] 3. Configuration via environment variables (pydantic-settings)
 - [x] 4. SQLAlchemy setup, database session dependency, and `Order` / `OrderItem` models
-- [ ] 5. Pydantic schemas for creating and reading orders
+- [x] 5. Pydantic schemas for creating and reading orders
 - [ ] 6. `POST /orders` and `GET /orders/{id}` endpoints
 - [ ] 7. `GET /orders` (with status filter) and `PATCH /orders/{id}/status`
 - [ ] 8. Alembic migrations for the schema
