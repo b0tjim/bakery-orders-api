@@ -8,7 +8,7 @@ Tick each box in the same commit that completes the step.
 - [x] 3. Configuration via environment variables (pydantic-settings)
 - [x] 4. SQLAlchemy setup, database session dependency, and `Order` / `OrderItem` models
 - [x] 5. Pydantic schemas for creating and reading orders
-- [ ] 6. `POST /orders` and `GET /orders/{id}` endpoints
+- [x] 6. `POST /orders` and `GET /orders/{id}` endpoints
 - [ ] 7. `GET /orders` (with status filter) and `PATCH /orders/{id}/status`
 - [ ] 8. Alembic migrations for the schema
 - [ ] 9. Test suite against SQLite/Postgres with fixtures; cover happy paths and 404/422 errors
