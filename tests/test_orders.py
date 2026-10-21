@@ -52,3 +52,34 @@ def test_create_order_with_no_items_returns_422(client):
     response = client.post("/orders", json={"customer_name": "Ada", "items": []})
 
     assert response.status_code == 422
+
+
+def test_list_orders_filters_by_status(client):
+    first = client.post("/orders", json=PAYLOAD).json()
+    second = client.post("/orders", json=PAYLOAD).json()
+    client.patch(f"/orders/{second['id']}/status", json={"status": "ready"})
+
+    everything = client.get("/orders").json()
+    ready = client.get("/orders", params={"status": "ready"}).json()
+
+    assert [o["id"] for o in everything] == [first["id"], second["id"]]
+    assert [o["id"] for o in ready] == [second["id"]]
+
+
+def test_list_orders_rejects_unknown_status(client):
+    assert client.get("/orders", params={"status": "burnt"}).status_code == 422
+
+
+def test_update_status(client):
+    order = client.post("/orders", json=PAYLOAD).json()
+
+    response = client.patch(f"/orders/{order['id']}/status", json={"status": "baking"})
+
+    assert response.status_code == 200
+    assert response.json()["status"] == "baking"
+
+
+def test_update_status_missing_order_returns_404(client):
+    response = client.patch("/orders/999/status", json={"status": "baking"})
+
+    assert response.status_code == 404
