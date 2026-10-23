@@ -1,34 +1,7 @@
-import pytest
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-from sqlalchemy.pool import StaticPool
-
-from app.database import Base, get_db
-from app.main import app
-
 PAYLOAD = {
     "customer_name": "Ada",
     "items": [{"product": "Apple pie", "quantity": 2, "unit_price": "18.50"}],
 }
-
-
-@pytest.fixture
-def client():
-    # StaticPool keeps one in-memory SQLite connection shared across requests.
-    engine = create_engine(
-        "sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool
-    )
-    Base.metadata.create_all(engine)
-    TestingSession = sessionmaker(bind=engine, expire_on_commit=False)
-
-    def override_get_db():
-        with TestingSession() as session:
-            yield session
-
-    app.dependency_overrides[get_db] = override_get_db
-    yield TestClient(app)
-    app.dependency_overrides.clear()
 
 
 def test_create_then_get_order(client):
@@ -83,3 +56,15 @@ def test_update_status_missing_order_returns_404(client):
     response = client.patch("/orders/999/status", json={"status": "baking"})
 
     assert response.status_code == 404
+
+
+def test_update_status_rejects_unknown_status(client):
+    order = client.post("/orders", json=PAYLOAD).json()
+
+    response = client.patch(f"/orders/{order['id']}/status", json={"status": "burnt"})
+
+    assert response.status_code == 422
+
+
+def test_get_order_with_non_numeric_id_returns_422(client):
+    assert client.get("/orders/abc").status_code == 422

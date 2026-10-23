@@ -11,7 +11,7 @@ Tick each box in the same commit that completes the step.
 - [x] 6. `POST /orders` and `GET /orders/{id}` endpoints
 - [x] 7. `GET /orders` (with status filter) and `PATCH /orders/{id}/status`
 - [x] 8. Alembic migrations for the schema
-- [ ] 9. Test suite against SQLite/Postgres with fixtures; cover happy paths and 404/422 errors
+- [x] 9. Test suite against SQLite/Postgres with fixtures; cover happy paths and 404/422 errors
 - [ ] 10. Ruff lint + format config; make `ruff check` and `ruff format --check` pass
 - [ ] 11. Multi-stage, non-root Dockerfile and `.dockerignore`
 - [ ] 12. `docker-compose.yml` with API + PostgreSQL + healthchecks for local dev
