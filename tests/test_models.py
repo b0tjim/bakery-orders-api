@@ -14,7 +14,9 @@ def test_order_persists_with_items():
     with Session(engine) as session:
         order = Order(
             customer_name="Ada",
-            items=[OrderItem(product="Apple pie", quantity=2, unit_price=Decimal("18.50"))],
+            items=[
+                OrderItem(product="Apple pie", quantity=2, unit_price=Decimal("18.50"))
+            ],
         )
         session.add(order)
         session.commit()

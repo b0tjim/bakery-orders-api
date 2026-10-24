@@ -19,10 +19,19 @@ def test_order_create_accepts_valid_payload():
 @pytest.mark.parametrize(
     "payload",
     [
-        {"customer_name": "", "items": [{"product": "Pie", "quantity": 1, "unit_price": "5"}]},
+        {
+            "customer_name": "",
+            "items": [{"product": "Pie", "quantity": 1, "unit_price": "5"}],
+        },
         {"customer_name": "Ada", "items": []},
-        {"customer_name": "Ada", "items": [{"product": "Pie", "quantity": 0, "unit_price": "5"}]},
-        {"customer_name": "Ada", "items": [{"product": "Pie", "quantity": 1, "unit_price": "-1"}]},
+        {
+            "customer_name": "Ada",
+            "items": [{"product": "Pie", "quantity": 0, "unit_price": "5"}],
+        },
+        {
+            "customer_name": "Ada",
+            "items": [{"product": "Pie", "quantity": 1, "unit_price": "-1"}],
+        },
     ],
 )
 def test_order_create_rejects_invalid_payload(payload):

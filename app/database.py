@@ -1,4 +1,5 @@
 """SQLAlchemy engine, session factory and the FastAPI session dependency."""
+
 from collections.abc import Iterator
 
 from sqlalchemy import create_engine

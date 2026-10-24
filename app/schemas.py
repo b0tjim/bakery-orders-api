@@ -1,4 +1,5 @@
 """Pydantic schemas: what clients send and what the API returns."""
+
 from datetime import datetime
 from decimal import Decimal
 from enum import StrEnum

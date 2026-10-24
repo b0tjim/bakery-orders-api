@@ -1,4 +1,5 @@
 """Order endpoints: create, list, fetch and update the status of orders."""
+
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, status

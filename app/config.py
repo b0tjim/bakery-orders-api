@@ -1,4 +1,5 @@
 """Application settings, read from environment variables (and an optional .env file)."""
+
 from functools import lru_cache
 
 from pydantic_settings import BaseSettings, SettingsConfigDict

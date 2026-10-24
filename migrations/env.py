@@ -1,4 +1,5 @@
 """Alembic environment: reads the DB URL from app settings and the models' metadata."""
+
 from logging.config import fileConfig
 
 from alembic import context
