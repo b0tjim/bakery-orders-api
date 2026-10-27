@@ -15,7 +15,7 @@ Tick each box in the same commit that completes the step.
 - [x] 10. Ruff lint + format config; make `ruff check` and `ruff format --check` pass
 - [x] 11. Multi-stage, non-root Dockerfile and `.dockerignore`
 - [x] 12. `docker-compose.yml` with API + PostgreSQL + healthchecks for local dev
-- [ ] 13. GitHub Actions CI: lint and test jobs
+- [x] 13. GitHub Actions CI: lint and test jobs
 - [ ] 14. CI: Docker build job (with layer caching)
 - [ ] 15. Release workflow: publish image to GHCR on `v*` version tags
 - [ ] 16. Dependabot for pip, Docker and GitHub Actions
