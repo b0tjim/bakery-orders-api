@@ -16,7 +16,7 @@ Tick each box in the same commit that completes the step.
 - [x] 11. Multi-stage, non-root Dockerfile and `.dockerignore`
 - [x] 12. `docker-compose.yml` with API + PostgreSQL + healthchecks for local dev
 - [x] 13. GitHub Actions CI: lint and test jobs
-- [ ] 14. CI: Docker build job (with layer caching)
+- [x] 14. CI: Docker build job (with layer caching)
 - [ ] 15. Release workflow: publish image to GHCR on `v*` version tags
 - [ ] 16. Dependabot for pip, Docker and GitHub Actions
 - [ ] 17. Prometheus-style `/metrics` endpoint (request count, latency) for later projects
