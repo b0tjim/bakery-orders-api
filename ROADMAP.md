@@ -19,7 +19,7 @@ Tick each box in the same commit that completes the step.
 - [x] 14. CI: Docker build job (with layer caching)
 - [x] 15. Release workflow: publish image to GHCR on `v*` version tags
 - [x] 16. Dependabot for pip, Docker and GitHub Actions
-- [ ] 17. Prometheus-style `/metrics` endpoint (request count, latency) for later projects
+- [x] 17. Prometheus-style `/metrics` endpoint (request count, latency) for later projects
 - [ ] 18. README: overview, Mermaid architecture diagram, run/test instructions, API examples
 - [ ] 19. README status badges (CI, release, license) and a "what this demonstrates" section
 - [ ] 20. Final polish: tag `v0.1.0`, verify GHCR image pulls and runs
