@@ -1,7 +1,19 @@
 # bakery-orders-api
 
+[![CI](https://github.com/b0tjim/bakery-orders-api/actions/workflows/ci.yml/badge.svg)](https://github.com/b0tjim/bakery-orders-api/actions/workflows/ci.yml)
+[![Release](https://github.com/b0tjim/bakery-orders-api/actions/workflows/release.yml/badge.svg)](https://github.com/b0tjim/bakery-orders-api/actions/workflows/release.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 FastAPI + PostgreSQL order API for a small cottage bakery (Dang Good Pies).
 Customers' orders go in, the baker moves them through `pending → baking → ready → picked_up`.
+
+## What this demonstrates
+
+- **API design**: FastAPI + Pydantic validation, SQLAlchemy models, Alembic migrations, 404/422 error handling.
+- **Testing and code quality**: pytest suite with shared fixtures, ruff lint and format enforced in CI.
+- **Containers**: multi-stage, non-root Dockerfile and a docker-compose stack (API + PostgreSQL) with healthchecks.
+- **CI/CD**: GitHub Actions for lint, test and Docker build with layer caching; tagged releases publish to GHCR.
+- **Operations**: Prometheus `/metrics` endpoint and Dependabot for pip, Docker and Actions.
 
 ## Architecture
 
