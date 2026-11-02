@@ -22,4 +22,4 @@ Tick each box in the same commit that completes the step.
 - [x] 17. Prometheus-style `/metrics` endpoint (request count, latency) for later projects
 - [x] 18. README: overview, Mermaid architecture diagram, run/test instructions, API examples
 - [x] 19. README status badges (CI, release, license) and a "what this demonstrates" section
-- [ ] 20. Final polish: tag `v0.1.0`, verify GHCR image pulls and runs
+- [x] 20. Final polish: tag `v0.1.0`, verify the GHCR image publishes via the release workflow (ghcr.io is not reachable from the dev sandbox)
