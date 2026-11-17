@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # ---- builder: install dependencies into a virtualenv ----
-FROM python:3.12-slim AS builder
+FROM python:3.15-slim AS builder
 ENV PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1
 RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
@@ -11,7 +11,7 @@ COPY app ./app
 RUN pip install .
 
 # ---- runtime: only the venv and the files needed to run ----
-FROM python:3.12-slim AS runtime
+FROM python:3.15-slim AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
     PATH="/opt/venv/bin:$PATH"
 RUN useradd --system --uid 10001 --no-create-home appuser
